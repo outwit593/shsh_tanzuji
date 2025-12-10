@@ -1,0 +1,59 @@
+{
+    "tableData2": {
+      "企业二氧化碳排放总量": "total_emission"
+    },
+    "tableData21": {
+      "化石燃料燃烧二氧化碳排放量": "HS_emis1",
+      "火炬燃烧二氧化碳排放量": "HJ_emis1",
+      "工业生产过程二氧化碳排放量": "GYGC_emis1",
+      "二氧化碳回收利用量": "Re_emis1",
+      "净购入使用的电力、热力产生的排放量": "CON_emis1",
+      "除自备电厂以外的二氧化碳排放总量": "total_emis1"
+    },
+    "tableData22": {
+      "化石燃料燃烧二氧化碳排放量": "HJ_emis2",
+      "脱硫过程二氧化碳排放量": "TL_emis2",
+      "净购入使用的电力、热力产生的排放量": "CON_emis2",
+      "自备电厂二氧化碳排放总量": "total_emis2"
+    },
+    "tableData3": {
+      "CO2直接排放总计": "total_emission",
+      "炼厂干气CO2直接排放量": "lcgq_emis",
+      "乙烯焦油CO2直接排放量": "yxjy_emis",
+      "液化石油气CO2直接排放量": "yhsyq_emis",
+      "天然气CO2直接排放量": "trq_emis",
+      "汽油(车辆用)CO2直接排放量": "qy_emis",
+      "柴油(车辆用)CO2直接排放量": "cy_emis",
+      "年消费量总计": "total_consumption",
+      "炼厂干气年消费量": "lcgq_con",
+      "乙烯焦油年消费量": "yxjy_con",
+      "液化石油气年消费量": "yhsyq_con",
+      "天然气年消费量": "trq_con",
+      "汽油(车辆用)年消费量": "qy_con",
+      "柴油(车辆用)年消费量": "cy_con"
+    },
+    "tableData42": {
+      "事故火炬加工损失总计": "total_sghj_loss",
+      "第1次事故火炬加工损失": "sghj_loss1",
+      "第2次事故火炬加工损失": "sghj_loss2",
+      "事故火炬加工排放所占比例": "total_sghj_porp",
+      "第1次事故火炬加工排放所占比例": "sghj_porp1",
+      "第2次事故火炬加工排放所占比例": "sghj_porp2",
+      "事故火炬排放折算系数": "total_sghj_convert",
+      "第1次事故火炬排放折算系数": "sghj_con1",
+      "第2次事故火炬排放折算系数": "sghj_con2",
+      "事故火炬燃烧碳氧化率": "total_sghj_oxygen",
+      "第1次事故火炬燃烧碳氧化率": "sghj_oxygen1",
+      "第2次事故火炬燃烧碳氧化率": "sghj_oxygen2",
+      "事故火炬燃烧CO2排放量": "total_sghj_emis", 
+      "第1次事故火炬燃烧CO2排放量": "sghj_emis1",
+      "第2次事故火炬燃烧CO2排放量": "sghj_emis2"      
+    },
+    "tableData43": {
+      "正常火炬燃烧CO2排放": "zchj_emis",
+      "事故火炬燃烧CO2排放": "sghj_emis",
+      "火炬燃烧CO2排放": "total_hj_emis"
+    }
+  }
+  
+  

@@ -1,0 +1,264 @@
+<template>
+  <div class="login-container">
+    <img class="loginBg" src="../../icons/image/login1.png">
+    <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
+
+      <div class="title-container">
+        <h3 class="title">上海石化碳足迹监控系统</h3>
+      </div>
+
+      <el-form-item prop="username">
+        <span class="svg-container">
+          <svg-icon icon-class="user" />
+        </span>
+        <el-input
+          ref="username"
+          v-model="loginForm.username"
+          placeholder="Username"
+          name="username"
+          type="text"
+          tabindex="1"
+          auto-complete="on"
+        />
+      </el-form-item>
+
+      <el-form-item prop="password">
+        <span class="svg-container">
+          <svg-icon icon-class="password" />
+        </span>
+        <el-input
+          :key="passwordType"
+          ref="password"
+          v-model="loginForm.password"
+          :type="passwordType"
+          placeholder="Password"
+          name="password"
+          tabindex="2"
+          auto-complete="on"
+          @keyup.enter.native="handleLogin"
+        />
+        <span class="show-pwd" @click="showPwd">
+          <svg-icon :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'" />
+        </span>
+      </el-form-item>
+
+      <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">Login</el-button>
+
+      <div class="tips">
+        <span style="margin-right:20px;">username: admin</span>
+        <span> password: any</span>
+      </div>
+
+    </el-form>
+    <img class="login-icon" src="../../icons/image/login2.png">
+  </div>
+</template>
+
+<script>
+import { validUsername } from '@/utils/validate'
+
+export default {
+  name: 'Login',
+  data() {
+    const validateUsername = (rule, value, callback) => {
+      if (!validUsername(value)) {
+        callback(new Error('Please enter the correct user name'));
+      } else {
+        callback();
+      }
+    };
+    const validatePassword = (rule, value, callback) => {
+      // 允许 'admin' 用户密码为 '123456'，并新增 'ecust' 用户密码为 'Ecust_0911'
+      if (this.loginForm.username === 'admin' && value !== '123456') {
+        callback(new Error('The password for wrong'));
+      } else if (this.loginForm.username === 'editor' && value !== 'Ecust_0911') {
+        callback(new Error('The password for wrong'));
+      } else {
+        callback();
+      }
+    };
+    return {
+      loginForm: {
+        username: 'admin',
+        password: ''
+      },
+      loginRules: {
+        username: [{ required: true, trigger: 'blur', validator: validateUsername }],
+        password: [{ required: true, trigger: 'blur', validator: validatePassword }]
+      },
+      loading: false,
+      passwordType: 'password',
+      redirect: undefined
+    };
+  },
+  watch: {
+    $route: {
+      handler: function(route) {
+        this.redirect = route.query && route.query.redirect;
+      },
+      immediate: true
+    }
+  },
+  methods: {
+    showPwd() {
+      if (this.passwordType === 'password') {
+        this.passwordType = '';
+      } else {
+        this.passwordType = 'password';
+      }
+      this.$nextTick(() => {
+        this.$refs.password.focus();
+      });
+    },
+    handleLogin() {
+      this.$refs.loginForm.validate(valid => {
+        if (valid) {
+          this.loading = true;
+          this.$store.dispatch('user/login', this.loginForm).then(() => {
+            window.location.href = 'https://172.160.11.205:443/backend_endpoint?return_url=https://10.136.44.205:9528/#/home';
+            this.$router.push({ path: this.redirect || '/' });
+            this.loading = false;
+          }).catch(() => {
+            this.loading = false;
+          });
+        } else {
+          console.log('error submit!!');
+          return false;
+        }
+      });
+    }
+  }
+}
+</script>
+
+<style lang="scss">
+/* 修复input 背景不协调 和光标变色 */
+/* Detail see https://github.com/PanJiaChen/vue-element-admin/pull/927 */
+
+$bg:#283443;
+$light_gray:#fff;
+$cursor: #fff;
+
+@supports (-webkit-mask: none) and (not (cater-color: $cursor)) {
+  .login-container .el-input input {
+    color: $cursor;
+  }
+}
+
+/* reset element-ui css */
+.login-container {
+  .loginBg{
+    position: absolute;
+    z-index: -1;
+    background-size: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  .el-input {
+    display: inline-block;
+    height: 47px;
+    width: 85%;
+    z-index: 1;
+
+    input {
+      background: transparent;
+      border: 0px;
+      // -webkit-appearance: none;
+      border-radius: 0px;
+      padding: 12px 5px 12px 15px;
+      color: $light_gray;
+      height: 47px;
+      caret-color: $cursor;
+
+      &:-webkit-autofill {
+        box-shadow: 0 0 0px 1000px $bg inset !important;
+        -webkit-text-fill-color: $cursor !important;
+      }
+    }
+  }
+
+  .el-form-item {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    color: #454545;
+  }
+}
+</style>
+
+<style lang="scss" scoped>
+$bg:#2d3a4b;
+$dark_gray:#889aa4;
+$light_gray:#eee;
+
+.login-container {
+  position: relative;
+  min-height: 100%;
+  width: 100%;
+  background-color: $bg;
+  overflow: hidden;
+  opacity: 0.8;
+
+  .login-form {
+    position: absolute;
+    width: 300px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    float: left;
+    right: 50px;
+    top: 180px;
+    margin: 0 50px;
+  }
+
+  .login-icon{
+    position: absolute;
+    float: left;
+    top: 200px;
+    right: 450px;
+    width: 15%;
+  }
+
+  .tips {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 10px;
+
+    span {
+      &:first-of-type {
+        margin-right: 16px;
+      }
+    }
+  }
+
+  .svg-container {
+    padding: 6px 5px 6px 15px;
+    color: $dark_gray;
+    vertical-align: middle;
+    width: 30px;
+    display: inline-block;
+  }
+
+  .title-container {
+    position: relative;
+
+    .title {
+      font-size: 26px;
+      color: $light_gray;
+      margin: 0px auto 40px auto;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+
+  .show-pwd {
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    font-size: 16px;
+    color: $dark_gray;
+    cursor: pointer;
+    user-select: none;
+  }
+}
+</style>

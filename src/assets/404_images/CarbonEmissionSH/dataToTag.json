@@ -1,0 +1,184 @@
+{
+    "石油焦": {
+      "总消耗量(t)": "syj_totalcon",
+      "低位热值（tJ/t或tJ/m3）": "syj_lowercvalue",
+      "设备": {
+        "syj1_psb1_con": {
+          "equipment": "自备电站锅炉",
+          "fuelConsumption": "syj1_psb1_con",
+          "emission": "syj1_psb1_emi",
+          "rate": "syj1_psb1_oe"
+        },
+        "syj2_psb2_con": {
+          "equipment": "自备电站锅炉",
+          "fuelConsumption": "syj2_psb2_con",
+          "emission": "syj2_psb2_emi",
+          "rate": "syj2_psb2_oe"
+        },
+        "syj_ed_con": {
+          "equipment": "其他",
+          "fuelConsumption": "syj_ed_con",
+          "emission": "syj_ed_emi"
+        }
+      }
+    },
+    "液化石油气": {
+      "总消耗量(t)": "syq_totalcon",
+      "设备": {
+        "syq1_ohf1_con": {
+          "equipment": "其他加热炉",
+          "fuelConsumption": "syq1_ohf1_con",
+          "emission": "syq1_ohf1_emi",
+          "rate": "syq1_ohf1_oe"
+        },
+        "syq2_ohf2_con": {
+          "equipment": "其他加热炉",
+          "fuelConsumption": "syq2_ohf2_con",
+          "emission": "syq2_ohf2_emi",
+          "rate": "syq2_ohf2_oe"
+        },
+        "syq_ed_con": {
+          "equipment": "其他",
+          "fuelConsumption": "syq_ed_con",
+          "emission": "syq_ed_emi"
+        }
+      }
+    },
+    "天然气": {
+      "总消耗量(t)": "trq_totalcon",
+      "设备": {
+        "trq1_ohf1_con": {
+          "equipment": "其他加热炉",
+          "fuelConsumption": "trq1_ohf1_con",
+          "emission": "trq1_ohf1_emi",
+          "rate": "trq1_ohf1_oe"
+        },
+        "trq2_ohf2_con": {
+          "equipment": "其他加热炉",
+          "fuelConsumption": "trq2_ohf2_con",
+          "emission": "trq2_ohf2_emi",
+          "rate": "trq2_ohf2_oe"
+        },
+        "trq3_ohf3_con": {
+          "equipment": "其他加热炉",
+          "fuelConsumption": "trq3_ohf3_con",
+          "emission": "trq3_ohf3_emi",
+          "rate": "trq3_ohf3_oe"
+        },
+        "trq_ed_con": {
+          "equipment": "其他",
+          "fuelConsumption": "trq_ed_con",
+          "emission": "trq_ed_emi"
+        }
+      }
+    },
+    "柴油": {
+      "总消耗量(t)": "cy_totalcon",
+      "设备": {
+        "cy_psb_con": {
+          "equipment": "自备电站锅炉",
+          "fuelConsumption": "cy_psb_con",
+          "emission": "cy_psb_emi",
+          "rate": "cy_psb_oe"
+        },
+        "cy_ed_con": {
+          "equipment": "其他",
+          "fuelConsumption": "cy_ed_con",
+          "emission": "cy_ed_emi"
+        }
+      }
+    },
+    "烟煤": {
+      "总消耗量(t)": "ym_totalcon",
+      "低位热值（tJ/t或tJ/m3）": "ym_lowercvalue",
+      "设备": {
+        "ym1_psb1_con": {
+          "equipment": "自备电站锅炉",
+          "fuelConsumption": "ym1_psb1_con",
+          "emission": "ym1_psb1_emi",
+          "rate": "ym1_psb1_oe"
+        },
+        "ym2_psb2_con": {
+          "equipment": "自备电站锅炉",
+          "fuelConsumption": "ym2_psb2_con",
+          "emission": "ym2_psb2_emi",
+          "rate": "ym2_psb2_oe"
+        },
+        "ym_ed_con": {
+          "equipment": "其他",
+          "fuelConsumption": "ym_ed_con",
+          "emission": "ym_ed_emi"
+        }
+      }
+    },
+    "汽油": {
+      "总消耗量(t)": "qy_totalcon",
+      "设备": {
+        "qy_ed_con": {
+          "equipment": "其他",
+          "fuelConsumption": "qy_ed_con",
+          "emission": "qy_ed_emi"
+        }
+      }
+    },
+    "焦炭": {
+      "总消耗量(t)": "jt_totalcon",
+      "设备": {
+        "jt_ohf_con": {
+          "equipment": "其他加热炉",
+          "fuelConsumption": "jt_ohf_con",
+          "emission": "jt_ohf_emi",
+          "rate": "jt_ohf_oe"
+        },
+        "jt_ed_con": {
+          "equipment": "其他",
+          "fuelConsumption": "jt_ed_con",
+          "emission": "jt_ed_emi"
+        }
+      }
+    },
+    "燃料油": {
+      "总消耗量(t)": "rly_totalcon",
+      "设备": {
+        "rly_sib_con": {
+          "equipment": "小型工业锅炉",
+          "fuelConsumption": "rly_sib_con",
+          "emission": "rly_sib_emi",
+          "rate": "rly_sib_oe"
+        },
+        "rly_ed_con": {
+          "equipment": "其他",
+          "fuelConsumption": "rly_ed_con",
+          "emission": "rly_ed_emi"
+        }
+      }
+    },
+    "炼厂干气": {
+      "总消耗量(t)": "lcgq_totalcon",
+      "设备": {
+        "lcgq1_ohf1_con": {
+          "equipment": "其他加热炉",
+          "fuelConsumption": "lcgq1_ohf1_con",
+          "emission": "lcgq1_ohf1_emi",
+          "rate": "lcgq1_ohf1_oe"
+        },
+        "lcgq2_ohf2_con": {
+          "equipment": "其他加热炉",
+          "fuelConsumption": "lcgq2_ohf2_con",
+          "emission": "lcgq2_ohf2_emi",
+          "rate": "lcgq2_ohf2_oe"
+        },
+        "lcgq3_ohf3_con": {
+          "equipment": "其他加热炉",
+          "fuelConsumption": "lcgq3_ohf3_con",
+          "emission": "lcgq3_ohf3_emi",
+          "rate": "lcgq3_ohf3_oe"
+        },
+        "lcgq_ed_con": {
+          "equipment": "其他",
+          "fuelConsumption": "lcgq_ed_con",
+          "emission": "lcgq_ed_emi"
+        }
+      }
+    }
+  }
